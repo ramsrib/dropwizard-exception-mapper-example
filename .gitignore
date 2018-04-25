@@ -2,7 +2,11 @@
 target/
 *.class
 *.jar
+dependency-reduced-pom.xml
 
 # Intellij
 .idea/
 *.iml
+
+# Avoid ignoring Maven wrapper jar file
+!/.mvn/wrapper/maven-wrapper.jar
