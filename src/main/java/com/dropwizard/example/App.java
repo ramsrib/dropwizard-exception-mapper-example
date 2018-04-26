@@ -20,8 +20,7 @@ public class App extends Application<Config> {
   @Override
   public void run(Config configuration, Environment environment) {
     final UserDAO dao = new UserDAO(hibernate.getSessionFactory());
-    //    environment.jersey().getResourceConfig().register(MyExceptionMapper.class);
-    environment.jersey().register(com.dropwizard.example.MyExceptionMapper.class);
+    environment.jersey().register(PersistenceExceptionMapper.class);
     environment.jersey().register(new UserResource(dao));
   }
 
